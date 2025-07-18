@@ -49,8 +49,25 @@ namespace Assignment
             #endregion
 
             #region Question 4
-            Permission permission = Permission.Read | Permission.Write | Permission.Execute | Permission.Delete;
-            Console.WriteLine($"Permissions: {permission}");
+            //Permission permission = Permission.Read | Permission.Write | Permission.Execute | Permission.Delete;
+            //Console.WriteLine($"Permissions: {permission}");
+            #endregion
+
+            #region Question 5
+            Console.WriteLine("Enter a color (Red, Green, Blue):");
+            string input = Console.ReadLine();
+
+            bool isValid = Enum.TryParse(input, true, out Colors selectedColor);
+
+            if (isValid && Enum.IsDefined(typeof(Colors), selectedColor))
+            {
+                Console.WriteLine($"{selectedColor} is a primary color.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid color or not a primary color.");
+            }
+
             #endregion
 
         }
